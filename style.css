@@ -11,12 +11,13 @@ html {
     --grid-column-gap: 4rem;
 
     --top-padding: 4rem;
-    --bottom-padding: 4rem;
+    --bottom-padding: 1vh;
 }
 
 body {
     font-size: var(--font-size, 24px);
     overflow-x: hidden;
+    background-color: white;
 }
 
 a {
@@ -33,7 +34,7 @@ a:hover {
     max-width: 1700px;
     margin: 0 auto;
     padding-top: var(--top-padding);
-    padding-bottom: calc(var(--bottom-padding) + 10vh);
+    padding-bottom: calc(var(--bottom-padding));
     position: relative;
 
     display: grid;
@@ -169,7 +170,13 @@ a:hover {
     left: 50%;
     width: 100vw;
     height: 100vh;
-    background-color: black;
+    background-color: white;
     transform: translate(-50%);
     mix-blend-mode: difference;
+    pointer-events: none;
+    z-index: 1;
+}
+
+.spacer {
+    height: 90vh;
 }
