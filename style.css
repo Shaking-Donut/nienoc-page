@@ -70,8 +70,7 @@ a:hover {
     text-indent: 3rem;
 }
 
-.team__container {
-    margin-top: 40svh;
+.team__container, .team__container-images {
     position: sticky;
     top: calc(var(--top-padding) + var(--grid-row-gap));
     
@@ -79,7 +78,9 @@ a:hover {
     display: flex;
     flex-direction: row;
     justify-content: space-around;
-    grid-column: span 2;
+    grid-column: 1 / 3;
+    grid-row: 2;
+    padding: 10px;
 }
 
 .team__person {
@@ -93,23 +94,26 @@ a:hover {
     height: 178px;
     width: 136px;
     object-fit: cover;
-    background-color: rgba(217, 217, 217, 1);
 }
 
-.team__person:nth-of-type(1) .team__person-image {
+.team__person-image:nth-of-type(4n + 1) {
     rotate: -4.74deg;
 }
 
-.team__person:nth-of-type(2) .team__person-image {
+.team__person-image:nth-of-type(4n + 2) {
     rotate: 2.21deg;
 }
 
-.team__person:nth-of-type(3) .team__person-image {
+.team__person-image:nth-of-type(4n + 3) {
     rotate: 0deg;
 }
 
-.team__person:nth-of-type(4) .team__person-image {
+.team__person-image:nth-of-type(4n) {
     rotate: -2.88deg;
+}
+
+.team__container-images {
+    z-index: 2;
 }
 
 .socials__container {
@@ -208,13 +212,17 @@ a:hover {
         display: none;
     }
 
-    .team__container {
+    .team__container, .team__container-images {
         display: grid;
         grid-template-columns: 1fr 1fr;
         gap: var(--gap);
         grid-column: span 1;
         top: calc(var(--top-padding) + var(--grid-row-gap) + 2rem);
         grid-column: 2;
+    }
+    
+    .team__person {
+        height: 170px;
     }
 
     .socials__container {
@@ -225,7 +233,6 @@ a:hover {
         height: 90px;
         width: 70px;
         object-fit: cover;
-        background-color: rgba(217, 217, 217, 1);
     }
 
     .team__person-name {
