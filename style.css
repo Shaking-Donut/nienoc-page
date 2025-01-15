@@ -11,7 +11,7 @@ html {
     --grid-column-gap: 4rem;
 
     --top-padding: 4rem;
-    --bottom-padding: 1vh;
+    --bottom-padding: 1svh;
 }
 
 body {
@@ -31,11 +31,12 @@ a:hover {
 
 
 .container {
-    max-width: 1700px;
+    max-width: min(1700px, 100vw);
     margin: 0 auto;
     padding-top: var(--top-padding);
     padding-bottom: calc(var(--bottom-padding));
     position: relative;
+    width: 100vw;
 
     display: grid;
     grid-template-columns: 1fr 1fr 1fr 1fr;
@@ -44,7 +45,7 @@ a:hover {
 }
 
 .info__container {
-    margin-top: 40vh;
+    margin-top: 40svh;
     position: sticky;
     top: 4rem;
     height: fit-content;
@@ -55,7 +56,7 @@ a:hover {
 }
 
 .about__container {
-    margin-top: 90vh;
+    margin-top: 90svh;
     position: sticky;
     top: 4rem;
 
@@ -70,7 +71,7 @@ a:hover {
 }
 
 .team__container {
-    margin-top: 40vh;
+    margin-top: 40svh;
     position: sticky;
     top: calc(var(--top-padding) + var(--grid-row-gap));
     
@@ -112,7 +113,7 @@ a:hover {
 }
 
 .socials__container {
-    margin-top: calc(90vh + 230px);
+    margin-top: calc(90svh + 230px);
     position: sticky;
     top: calc(var(--top-padding) + var(--grid-row-gap));
     
@@ -122,7 +123,7 @@ a:hover {
 }
 
 .events__container {
-    margin-top: 40vh;
+    margin-top: 40svh;
     position: sticky;
     top: calc(var(--top-padding) + 230px + 2 * var(--grid-row-gap));
     height: fit-content;
@@ -144,7 +145,7 @@ a:hover {
 }
 
 .credits__container {
-    margin-top: 90vh;
+    margin-top: 90svh;
     position: sticky;
     top: calc(var(--top-padding) + 230px + 2 * var(--grid-row-gap));
 
@@ -178,5 +179,73 @@ a:hover {
 }
 
 .spacer {
-    height: 90vh;
+    height: 90svh;
+}
+
+@media screen and (max-width: 670px) {
+    html {
+        --font-size: 18px;
+
+        --grid-column-gap: var(--gap);
+        --grid-row-gap: 2rem;
+    }
+
+    .container {
+        padding: unset;
+        padding-block: 2rem;
+        padding-inline: 1rem;
+
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+    }
+
+    .info__container {
+        grid-column: span 2;
+        gap: var(--gap);
+    }
+
+    .about__container {
+        display: none;
+    }
+
+    .team__container {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: var(--gap);
+        grid-column: span 1;
+        top: calc(var(--top-padding) + var(--grid-row-gap) + 2rem);
+        grid-column: 2;
+    }
+
+    .socials__container {
+        top: calc(var(--top-padding) + var(--grid-row-gap) + 8rem);
+    }
+
+    .team__person-image {
+        height: 90px;
+        width: 70px;
+        object-fit: cover;
+        background-color: rgba(217, 217, 217, 1);
+    }
+
+    .team__person-name {
+        font-size: 13px;
+    }
+
+    .events__container {
+        top: calc(var(--top-padding) + 230px + 2 * var(--grid-row-gap) + 4rem);
+    }
+
+    .events__list {
+        flex-wrap: wrap;
+        gap: var(--gap)
+    }
+
+    .credits__logo {
+        height: 83px;
+    }
+
+    .spacer {
+        display: none;
+    }
 }
