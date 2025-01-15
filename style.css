@@ -73,6 +73,7 @@ a:hover {
 .team__container, .team__container-images {
     position: sticky;
     top: calc(var(--top-padding) + var(--grid-row-gap));
+    margin-top: 40svh;
     
     height: fit-content;
     display: flex;
@@ -186,7 +187,7 @@ a:hover {
     height: 90svh;
 }
 
-@media screen and (max-width: 670px) {
+@media screen and (max-width: 1080px) {
     html {
         --font-size: 18px;
 
@@ -217,8 +218,9 @@ a:hover {
         grid-template-columns: 1fr 1fr;
         gap: var(--gap);
         grid-column: span 1;
-        top: calc(var(--top-padding) + var(--grid-row-gap) + 2rem);
+        top: calc(var(--top-padding) + var(--grid-row-gap) + 1rem);
         grid-column: 2;
+        padding: 0px;
     }
     
     .team__person {
