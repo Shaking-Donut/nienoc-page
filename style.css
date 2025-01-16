@@ -99,19 +99,19 @@ a:hover {
     object-fit: cover;
 }
 
-.team__person-image:nth-of-type(4n + 1) {
+.team__person:nth-of-type(1) > .team__person-image {
     rotate: -4.74deg;
 }
 
-.team__person-image:nth-of-type(4n + 2) {
+.team__person:nth-of-type(2) > .team__person-image {
     rotate: 2.21deg;
 }
 
-.team__person-image:nth-of-type(4n + 3) {
+.team__person:nth-of-type(3) > .team__person-image {
     rotate: 0deg;
 }
 
-.team__person-image:nth-of-type(4n) {
+.team__person:nth-of-type(4) > .team__person-image {
     rotate: -2.88deg;
 }
 
@@ -200,6 +200,8 @@ a:hover {
     .container {
         padding: unset;
         padding-block: 2rem;
+        padding-inline: 1rem;
+
 
         display: grid;
         grid-template-columns: 1fr 1fr;
