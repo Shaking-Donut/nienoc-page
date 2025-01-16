@@ -1,3 +1,15 @@
+@font-face {
+    font-family: 'Redaction';
+    src: url("fonts/Redaction_35-Regular.woff2");
+    font-weight: normal;
+}
+
+@font-face {
+    font-family: 'Redaction';
+    src: url("fonts/Redaction_35-Bold.woff2");
+    font-weight: bold;
+}
+
 * {
     margin: 0;
     padding: 0;
@@ -18,6 +30,7 @@ body {
     font-size: var(--font-size, 24px);
     overflow-x: hidden;
     background-color: white;
+    font-family: 'Redaction', "Times New Roman", serif;
 }
 
 a {
